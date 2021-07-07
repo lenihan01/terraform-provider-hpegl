@@ -38,5 +38,5 @@ Use the script `tools/install-hpegl-provider-windows.ps1` to automatically downl
 The above will install the latest available release. To install a specific release:
 
 ```shell
-iex "& { $(irm https://raw.githubusercontent.com/HewlettPackard/terraform-provider-hpegl/main/tools/install-hpegl-provider-windows.ps1) } -VERSION v0.0.1 -Preview "
+iex "& { $(irm https://raw.githubusercontent.com/HewlettPackard/terraform-provider-hpegl/main/tools/install-hpegl-provider-windows.ps1) } -VERSION v0.0.1"
 ```
