@@ -32,11 +32,11 @@ VERSION=v0.0.5 bash <(curl -sL https://raw.githubusercontent.com/HewlettPackard/
 Use the script `tools/install-hpegl-provider-windows.ps1` to automatically download and install hpegl provider:
 
 ```shell
-. { iwr -useb https://raw.githubusercontent.com/HewlettPackard/terraform-provider-hpegl/Windows-Install/tools/install-hpegl-provider-windows.ps1 } | iex ;
+. { iwr -useb https://raw.githubusercontent.com/HewlettPackard/terraform-provider-hpegl/main/tools/install-hpegl-provider-windows.ps1 } | iex ;
 ```
 
 The above will install the latest available release. To install a specific release:
 
 ```shell
-iex "& { $(irm https://raw.githubusercontent.com/HewlettPackard/terraform-provider-hpegl/Windows-Install/tools/install-hpegl-provider-windows.ps1) } -VERSION v0.0.1 -Preview "
+iex "& { $(irm https://raw.githubusercontent.com/HewlettPackard/terraform-provider-hpegl/main/tools/install-hpegl-provider-windows.ps1) } -VERSION v0.0.1 -Preview "
 ```
