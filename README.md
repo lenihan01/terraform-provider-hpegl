@@ -25,3 +25,18 @@ The above will install the latest available release. To install a specific relea
 ```shell
 VERSION=v0.0.5 bash <(curl -sL https://raw.githubusercontent.com/HewlettPackard/terraform-provider-hpegl/main/tools/install-hpegl-provider.sh)
 ```
+
+
+### Windows
+
+Use the script `tools/install-hpegl-provider-windows.ps1` to automatically download and install hpegl provider:
+
+```shell
+ . { iwr -useb https://raw.githubusercontent.com/HewlettPackard/terraform-provider-hpegl/Windows-Install/tools/install-hpegl-provider-windows.ps1 } | iex; install)
+```
+
+<!-- The above will install the latest available release. To install a specific release:
+
+```shell
+VERSION=v0.0.5 bash <(curl -sL https://raw.githubusercontent.com/HewlettPackard/terraform-provider-hpegl/main/tools/install-hpegl-provider.sh)
+``` -->
