@@ -40,7 +40,7 @@ catch {
     Remove-Item -Path "${windows_hpegl_dir}\${version_number}" -Recurse -Force -ErrorAction SilentlyContinue 
 
     Write-Host "Exiting..."
-    exit 
+    Return 
 }
 
 Write-Host Extracting release files
