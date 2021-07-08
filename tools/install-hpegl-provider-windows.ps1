@@ -25,10 +25,23 @@ $hpegl_zip="terraform-provider-hpegl_${version_number}_${os}_${arch}.zip"
 $hpegl=$hpegl_zip -replace '.zip'
 $hpegl_dl_url="https://github.com/${repo}/releases/download/${VERSION}/${hpegl_zip}"
 
-Write-Host Downloading latest release
+
 mkdir "$dest_dir" 
 Set-Location "$dest_dir"
-Invoke-WebRequest $hpegl_dl_url -Out $hpegl_zip
+
+try {
+    Invoke-WebRequest $hpegl_dl_url -Out $hpegl_zip     
+}
+catch {
+    Write-Host "Error: The version that was specified does not exist."
+
+    Set-Location "${windows_hpegl_dir}"
+    Remove-Item -Path "${windows_hpegl_dir}\${version_number}" -Recurse -Force -ErrorAction SilentlyContinue 
+
+    Write-Host "Exiting..."
+    exit 
+}
+
 
 Write-Host Extracting release files
 Expand-Archive $hpegl_zip -Force
