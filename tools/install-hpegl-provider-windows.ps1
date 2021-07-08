@@ -29,7 +29,6 @@ $hpegl_zip="terraform-provider-hpegl_${version_number}_${os}_${arch}.zip"
 $hpegl=$hpegl_zip -replace '.zip'
 $hpegl_dl_url="https://github.com/${repo}/releases/download/${VERSION}/${hpegl_zip}"
 
-
 mkdir "$dest_dir" 
 Set-Location "$dest_dir"
 
@@ -45,7 +44,6 @@ catch {
     Write-Host "Exiting..."
     exit 
 }
-
 
 Write-Host Extracting release files
 Expand-Archive $hpegl_zip -Force
