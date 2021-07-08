@@ -7,8 +7,6 @@ $windows_hpegl_dir="$env:appdata\terraform.d\plugins\registry.terraform.io\hewle
 
 $users_pwd = Get-Location
 
-Write-Host $users_pwd
-
 function get_latest_release {
     Write-Host Getting latest release
     $release_url="https://api.github.com/repos/${repo}/releases/latest"
