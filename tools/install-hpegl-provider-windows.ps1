@@ -5,6 +5,10 @@ $arch="amd64"
 $repo="HewlettPackard/terraform-provider-hpegl"
 $windows_hpegl_dir="$env:appdata\terraform.d\plugins\registry.terraform.io\hewlettpackard\hpegl"
 
+$users_pwd = Get-Location
+
+Write-Host $users_pwd
+
 function get_latest_release {
     Write-Host Getting latest release
     $release_url="https://api.github.com/repos/${repo}/releases/latest"
@@ -35,7 +39,7 @@ try {
 catch {
     Write-Host "Error: The version that was specified does not exist."
 
-    Set-Location "${windows_hpegl_dir}"
+    Set-Location "${users_pwd}"
     Remove-Item -Path "${windows_hpegl_dir}\${version_number}" -Recurse -Force -ErrorAction SilentlyContinue 
 
     Write-Host "Exiting..."
