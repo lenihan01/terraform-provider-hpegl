@@ -25,7 +25,7 @@ $version_number=$VERSION -replace 'v'
 $dest_dir="${windows_hpegl_dir}\${version_number}\${os}_${arch}\"
 $hpegl_zip="terraform-provider-hpegl_${version_number}_${os}_${arch}.zip"
 $hpegl=$hpegl_zip -replace '.zip'
-$hpegl_dl_url="https://github.com/${repo}/releases/download/${VERSION}/${hpegl_zip}deletemetowork"
+$hpegl_dl_url="https://github.com/${repo}/releases/download/${VERSION}/${hpegl_zip}"
 
 mkdir "$dest_dir" 
 Set-Location "$dest_dir"
@@ -35,11 +35,6 @@ try {
 }
 catch {
     throw 
-}
-finally {
-    Write-Host "Error: The web request failed, or the version that was specified does not exist."
-    Set-Location "${users_pwd}"
-    Remove-Item -Path "${windows_hpegl_dir}\${version_number}" -Recurse -Force -ErrorAction SilentlyContinue 
 }
 
 Write-Host Extracting release files
