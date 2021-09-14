@@ -10,7 +10,7 @@ $users_pwd = Get-Location
 function get_latest_release {
     Write-Host Getting latest release
     $release_url="https://api.github.com/repos/${repo}/releases/latest"
-    $tag = (Invoke-WebRequest $release_url | ConvertFrom-Json)[0].tag_name
+    $tag = (Invoke-WebRequest $release_url -UseBasicParsing | ConvertFrom-Json)[0].tag_name
     $VERSION=${tag}
     
     $VERSION
