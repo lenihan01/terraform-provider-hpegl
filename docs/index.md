@@ -59,6 +59,8 @@ provider "hpegl" {
 - **iam_service_url** (String) The IAM service URL to be used to generate tokens.  In the case of API-vended service clients
             (the default) then this should be set to the "issuer url" for the client.  In the case of non-API-vended
             service clients use the appropriate GL "client" URL. Can be set by HPEGL_IAM_SERVICE_URL env-var
+- **iam_token** (String) The IAM token to be used with the client(s).  Note that in normal operation
+                a service client is used.  Passing-in a token means that tokens will not be generated or refreshed.
 - **tenant_id** (String) The tenant-id to be used, can be set by HPEGL_TENANT_ID env-var
 - **user_id** (String) The user id to be used, can be set by HPEGL_USER_ID env-var
 - **user_secret** (String) The user secret to be used, can be set by HPEGL_USER_SECRET env-var
