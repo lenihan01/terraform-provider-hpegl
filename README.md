@@ -93,7 +93,7 @@ ${HOME}/.local/share/terraform/plugins/registry.terraform.io/hewlettpackard/hpeg
 
 1. Make sure you have the correct Terraform version installed; It must be v0.13 or later:
    ```shell
-   > terrafrom version
+   > terraform version
    
    > Terraform v0.15.3
    > on linux_amd64
